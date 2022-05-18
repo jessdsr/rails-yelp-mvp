@@ -1,5 +1,16 @@
 <h1> Welcome to <em><%= @restaurant.name %></em> 👩🏽‍🍳 </h1>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.category %></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Category: <%= @restaurant.category %></p>
 
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.rating %> | <%= review.content.capitalize %></li>
+  <% end %>
+</ul>
+<br>
+
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary' %>
 <button class="btn btn-light"><%= link_to "Homepage", restaurants_path %></button>
+<button class="btn btn-light"><%= link_to "Edit", edit_restaurant_path(@restaurant) %></button>
+<%= link_to 'Delete this restaurant', restaurant_path(@restaurant), data: {turbo_method: 'delete'}, class: 'btn btn-light' %>

@@ -1,0 +1,8 @@
+<%= simple_form_for restaurant do |f| %>
+  <%= f.input :name, label: 'Restaurant name?' %>
+  <%= f.input :address, label: 'Address?' %>
+  <%= f.input :category,  collection: Restaurant::CATEGORIES %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<button class="btn btn-light"><%= link_to "Back", restaurants_path %></button>
