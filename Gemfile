@@ -48,6 +48,10 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Add Simple Form to your app:
+  gem "simple_form", github: "heartcombo/simple_form"
+  # Generate random data with Faker
+  gem 'faker'
 end
 
 group :development do
